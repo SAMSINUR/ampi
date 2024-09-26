@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum Suhu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .thermometer {
+            width: 100px;
+            height: 300px;
+            border: 2px solid black;
+            border-radius: 10px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .mercury {
+            background-color: red;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            transition: height 2s ease;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Praktikum Suhu</h1>
+    <p>Klik tombol untuk melihat perubahan suhu pada termometer</p>
+
+    <div class="container">
+        <div class="thermometer">
+            <div class="mercury" id="mercury" style="height: 50%;"></div>
+        </div>
+        <div class="buttons">
+            <button onclick="changeTemperature('hot')">Air Panas</button>
+            <button onclick="changeTemperature('cold')">Air Dingin</button>
+        </div>
+    </div>
+
+    <script>
+        function changeTemperature(type) {
+            const mercury = document.getElementById('mercury');
+            if (type === 'hot') {
+                mercury.style.height = '90%'; // Suhu panas
+            } else if (type === 'cold') {
+                mercury.style.height = '20%'; // Suhu dingin
+            }
+        }
+    </script>
+</body>
+</html>
